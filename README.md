@@ -25,10 +25,11 @@ services:
       - TZ=Europe/Moscow
       - PUID=1000
       - PGID=1000
-      - AUTH=your_auth
+      # get from https://ddns.horse/
       - TOKEN=your_token
+      # https://dnsimple.com/a/ACCOUNT_ID/domains/ZONE_ID/records/RECORD_ID/edit
       - ACCOUNT_ID=your_account_id
-      - ZONE_ID=your_zone_id
+      - ZONE_ID=example.com
       - RECORD_ID=your_record_id
 ```
 
