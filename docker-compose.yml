@@ -13,5 +13,3 @@ services:
       - ACCOUNT_ID=${DNSIMPLE_ACCOUNT_ID}
       - ZONE_ID=${DNSIMPLE_ZONE_ID}
       - RECORD_ID=${DNSIMPLE_RECORD_ID}
-    volumes:
-      - ./ddns.sh:/config/ddns.sh
