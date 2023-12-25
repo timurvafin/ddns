@@ -1,0 +1,17 @@
+version: '3.3'
+
+services:
+  ddns-service:
+    build: .
+    restart: unless-stopped
+    environment:
+      - TZ
+      - PUID
+      - PGID
+      - AUTH=${DNSIMPLE_AUTH}
+      - TOKEN=${DNSIMPLE_TOKEN}
+      - ACCOUNT_ID=${DNSIMPLE_ACCOUNT_ID}
+      - ZONE_ID=${DNSIMPLE_ZONE_ID}
+      - RECORD_ID=${DNSIMPLE_RECORD_ID}
+    volumes:
+      - ./ddns.sh:/config/ddns.sh
