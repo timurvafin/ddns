@@ -29,8 +29,8 @@ services:
       - TOKEN=your_token
       # https://dnsimple.com/a/ACCOUNT_ID/domains/ZONE_ID/records/RECORD_ID/edit
       - ACCOUNT_ID=your_account_id
-      - ZONE_ID=example.com
-      - RECORD_ID=your_record_id
+      # full hostname for your external ip
+      - HOSTNAME=ddns.example.com
 ```
 
 ### License

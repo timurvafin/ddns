@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check if environment variables are set
-for var in TOKEN ACCOUNT_ID ZONE_ID RECORD_ID; do
+for var in HOSTNAME TOKEN ACCOUNT_ID; do
   if [ -z "${!var}" ]; then
     echo "\$$var is not set"
     exit 1
@@ -21,10 +21,7 @@ if [ "$CURRENT_IP" = "$LATEST_IP" ]; then
 else
   echo "Updating IP address..."
   echo "$CURRENT_IP" > "$WORKDIR/.latest_ip"
-  curl -H "Authorization: Bearer $TOKEN" \
-       -H "Content-Type: application/json" \
-       -H "Accept: application/json" \
-       -X "PATCH" \
-       -i "https://api.dnsimple.com/v2/$ACCOUNT_ID/zones/$ZONE_ID/records/$RECORD_ID" \
-       -d "{\"content\":\"$CURRENT_IP\",\"ttl\":$TTL}"
+
+  curl -u "$ACCOUNT_ID:$TOKEN" \
+       -i "https://ddns.horse/nic/update?hostname=$HOSTNAME&myip=$CURRENT_IP"
 fi

@@ -9,7 +9,6 @@ services:
       - TZ
       - PUID
       - PGID
-      - TOKEN=${DNSIMPLE_TOKEN}
+      - TOKEN=${DNSIMPLE_HORSE_TOKEN}
       - ACCOUNT_ID=${DNSIMPLE_ACCOUNT_ID}
-      - ZONE_ID=${DNSIMPLE_ZONE_ID}
-      - RECORD_ID=${DNSIMPLE_RECORD_ID}
+      - HOSTNAME=${DNSIMPLE_HOSTNAME}
