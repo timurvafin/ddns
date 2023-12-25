@@ -1,5 +1,5 @@
-# Use linuxserver/docker-baseimage-alpine as base image
-FROM linuxserver/docker-baseimage-alpine
+# Use linuxserver/baseimage-alpine as base image
+FROM linuxserver/baseimage-alpine
 
 # Set the working directory to /config
 WORKDIR /config
