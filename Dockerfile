@@ -1,5 +1,5 @@
 # Use linuxserver/baseimage-alpine as base image
-FROM linuxserver/baseimage-alpine
+FROM ghcr.io/linuxserver/baseimage-alpine
 
 # Set the working directory to /config
 WORKDIR /config
